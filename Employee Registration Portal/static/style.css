@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #eef2f7);
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 14px;
+    box-shadow: 0 16px 36px rgba(49, 73, 126, 0.12);
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #1f3a93;
+}
+
+label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: 600;
+}
+
+input,
+button,
+.button-link {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input {
+    padding: 12px 14px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4f7df0;
+    box-shadow: 0 0 0 3px rgba(79, 125, 240, 0.12);
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px;
+    background: #4f7df0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.button-link:hover {
+    background: #3b6dd2;
+}
+
+.flash-messages {
+    margin: 16px 0;
+}
+
+.flash {
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.flash.success {
+    background: #e6f7ef;
+    color: #135e44;
+    border: 1px solid #b8e6c8;
+}
+
+.flash.error {
+    background: #fdecea;
+    color: #8a1f11;
+    border: 1px solid #f5c2c0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e6eaf0;
+}
+
+th {
+    background: #f7f9ff;
+    color: #4a5f8b;
+}
+
+tbody tr:nth-child(even) {
+    background: #fbfcff;
+}
+
+.summary {
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #4f5f7a;
+}
+
+.empty-state {
+    padding: 28px 12px;
+    text-align: center;
+    background: #f8f9ff;
+    border-radius: 10px;
+    color: #516178;
+}
+
+.footer-links {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.button-link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 18px;
+    background: #4f7df0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.inline-form {
+    display: inline-block;
+    margin: 0;
+}
+
+.delete-button {
+    padding: 8px 12px;
+    background: #e45f61;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #c74548;
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin: 24px;
+        padding: 22px;
+    }
+
+    input,
+    button,
+    .button-link {
+        width: 100%;
+    }
+}

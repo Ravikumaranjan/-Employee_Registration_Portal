@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Registration Portal</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+        {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('add_employee') }}" method="POST">
+        <label for="name">Employee Name</label>
+        <input id="name" type="text" name="name" placeholder="Enter name" required>
+
+        <label for="department">Department</label>
+        <input id="department" type="text" name="department" placeholder="Enter department" required>
+
+        <label for="salary">Salary</label>
+        <input id="salary" type="number" name="salary" placeholder="Enter salary" step="0.01" min="0" required>
+
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <div class="footer-links">
+        <a class="button-link" href="{{ url_for('view_employees') }}">View Employees</a>
+    </div>
+</div>
+
+</body>
+</html>

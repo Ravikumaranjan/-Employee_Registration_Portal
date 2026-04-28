@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Records</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+        {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    {% if employees %}
+    <div class="summary">Total employees: {{ employees|length }}</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emp in employees %}
+            <tr>
+                <td>{{ emp['id'] }}</td>
+                <td>{{ emp['name'] }}</td>
+                <td>{{ emp['department'] }}</td>
+                <td>{{ emp['salary']|round(2) }}</td>
+                <td>
+                    <form action="{{ url_for('delete_employee', employee_id=emp['id']) }}" method="POST" class="inline-form">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p class="empty-state">No employee records found yet.</p>
+    {% endif %}
+
+    <div class="footer-links">
+        <a class="button-link" href="{{ url_for('home') }}">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
